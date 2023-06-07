@@ -82,7 +82,7 @@ export default function App() {
       <Services />
       <FlatList
         data={services}
-        keyExtractor={(id) => String(id)}
+        keyExtractor={({ id }) => String(id)}
         renderItem={({ item: { name, price, description } }) => {
           return <Item name={name} price={price} description={description} />;
         }}
