@@ -29,20 +29,35 @@ export default StyleSheet.create({
     alignSelf: "flex-end",
   },
   addItem: {
-    flexDirection: "column",
+    flexDirection: "row",
     marginTop: 8,
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+  },
+  amountContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 8,
   },
   amount: {
     fontSize: 16,
+    marginRight: 8,
+  },
+  priceContainer: {
+    flexDirection: "row",
   },
   price: {
     fontSize: 16,
+    marginRight: 8,
   },
   finalPrice: {
     fontSize: 18,
     fontWeight: "bold",
     color: colors.primaryBlue,
     marginBottom: 8,
+  },
+  btn: {
+    height: "fit-content",
   },
   divider: {
     marginTop: 16,

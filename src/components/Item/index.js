@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Button, Image, Text, TextInput, View } from "react-native";
+import { Button, Image, Text, View } from "react-native";
 import styles from "./styles";
+import { AmountInput } from "../AmountInput";
 
 export const Item = ({ name, img, price, description }) => {
   const [finalPrice, setFinalPrice] = useState(0);
+  const [amount, setAmount] = useState(1);
   return (
     <View style={styles.wrapperItem}>
       <Image source={img} style={styles.itemImg} />
@@ -13,17 +15,19 @@ export const Item = ({ name, img, price, description }) => {
         <Text style={styles.itemPrice}>R${price}</Text>
 
         <View style={styles.addItem}>
-          <View>
-            <Text style={styles.amount}>Quantidade: </Text>
-            <TextInput value="0" />
+          <View style={styles.item}>
+            <View style={styles.amountContainer}>
+              <Text style={styles.amount}>Quantidade: </Text>
+              <AmountInput setAmount={setAmount} value={amount} />
+            </View>
+
+            <View style={styles.priceContainer}>
+              <Text style={styles.price}>Preço:</Text>
+              <Text style={styles.finalPrice}>R${finalPrice}</Text>
+            </View>
           </View>
 
-          <View>
-            <Text style={styles.price}>Preço:</Text>
-            <Text style={styles.finalPrice}>R${finalPrice}</Text>
-          </View>
-
-          <Button title="Adicionar" />
+          <Button style={styles.btn} title="Adicionar" />
         </View>
       </View>
 
