@@ -13,7 +13,12 @@ export const Item = ({ name, img, price, description }) => {
       <View style={styles.itemInfo}>
         <Text style={styles.itemName}>{name}</Text>
         <Text style={styles.itemDescription}>{description}</Text>
-        <Text style={styles.itemPrice}>R${price}</Text>
+        <Text style={styles.itemPrice}>
+          {Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          }).format(price)}
+        </Text>
 
         <View style={styles.addItem}>
           <View style={styles.item}>
