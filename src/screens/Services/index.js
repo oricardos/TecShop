@@ -2,5 +2,5 @@ import React from "react";
 import { Text } from "react-native";
 
 export const Services = () => {
-  return <Text>Services</Text>;
+  // return <Text>Services</Text>;
 };

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, Image, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import styles from "./styles";
 import { AmountInput } from "../AmountInput";
+import { Button } from "../Button";
 
 export const Item = ({ name, img, price, description }) => {
   const [finalPrice, setFinalPrice] = useState(0);
@@ -27,11 +28,11 @@ export const Item = ({ name, img, price, description }) => {
             </View>
           </View>
 
-          <Button style={styles.btn} title="Adicionar" />
+          <Button text={"Adicionar"} />
         </View>
       </View>
 
-      {/* <View style={styles.divider} /> */}
+      <View style={styles.divider} />
     </View>
   );
 };
