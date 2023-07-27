@@ -1,5 +1,10 @@
-import { SafeAreaView, StatusBar, FlatList, Text } from "react-native";
-import { Services } from "./src/screens/Services";
+import {
+  SafeAreaView,
+  StatusBar,
+  FlatList,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 import { Item } from "./src/components/Item";
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
@@ -102,21 +107,24 @@ export default function App() {
   return (
     <SafeAreaView>
       <StatusBar />
-      <Services />
-      <FlatList
-        data={services}
-        keyExtractor={({ id }) => String(id)}
-        renderItem={({ item: { name, img, price, description } }) => {
-          return (
-            <Item
-              name={name}
-              img={img}
-              price={price}
-              description={description}
-            />
-          );
-        }}
-      />
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? "padding" : "height"}
+      >
+        <FlatList
+          data={services}
+          keyExtractor={({ id }) => String(id)}
+          renderItem={({ item: { name, img, price, description } }) => {
+            return (
+              <Item
+                name={name}
+                img={img}
+                price={price}
+                description={description}
+              />
+            );
+          }}
+        />
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }

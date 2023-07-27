@@ -61,7 +61,7 @@ export const Item = ({ name, img, price, description }) => {
               </View>
             </View>
 
-            <Button text={"Adicionar"} />
+            <Button text={"Adicionar ao Carrinho"} />
           </View>
         ) : null}
       </View>
