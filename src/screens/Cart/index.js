@@ -1,17 +1,22 @@
 import React from "react";
 import { FlatList } from "react-native";
 import { Item } from "../../components/Item";
+import { CartStatus } from "../../components/CartStatus";
 
-export const Services = ({ services }) => {
+export const Cart = ({services}) => {
   return (
-    <FlatList
+    <>
+      <CartStatus />
+      <FlatList
       data={services}
       keyExtractor={({ id }) => String(id)}
       renderItem={({ item: { name, img, price, description } }) => {
         return (
-          <Item name={name} img={img} price={price} description={description} />
+          <Item isCart name={name} img={img} price={price} description={description} />
         );
       }}
     />
+    </>
+    
   );
 };

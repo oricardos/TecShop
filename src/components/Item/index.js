@@ -3,11 +3,12 @@ import { Image, Text, View, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { AmountInput } from "../AmountInput";
 import { Button } from "../Button";
+import { CartStatus } from "../CartStatus";
 
-export const Item = ({ name, img, price, description }) => {
+export const Item = ({isCart, name, img, price, description }) => {
   const [amount, setAmount] = useState(1);
   const [finalPrice, setFinalPrice] = useState(0);
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = useState(isCart);
 
   const updateAmount = (newAmount) => {
     setAmount(newAmount);
@@ -28,7 +29,8 @@ export const Item = ({ name, img, price, description }) => {
   }, []);
 
   return (
-    <View style={styles.wrapperItem}>
+    <>
+      <View style={styles.wrapperItem}>
       <Image source={img} style={styles.itemImg} />
       <View style={styles.itemInfo}>
         <TouchableOpacity onPress={expandInverted}>
@@ -61,12 +63,13 @@ export const Item = ({ name, img, price, description }) => {
               </View>
             </View>
 
-            <Button text={"Adicionar ao Carrinho"} />
+            <Button text={isCart ? "Remover do Carrinho" : "Adicionar ao Carrinho"} />
           </View>
         ) : null}
       </View>
 
       <View style={styles.divider} />
     </View>
+    </>
   );
 };
