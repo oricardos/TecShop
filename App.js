@@ -1,13 +1,13 @@
 import {
   SafeAreaView,
   StatusBar,
-  FlatList,
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
-import { Item } from "./src/components/Item";
 import "intl";
 import "intl/locale-data/jsonp/pt-BR";
+
+import { Services } from "./src/screens/Services";
 
 import Teclado from "./assets/items/teclado.png";
 import Headset from "./assets/items/headset.png";
@@ -19,6 +19,7 @@ import Roteador from "./assets/items/roteador.png";
 import Impressora from "./assets/items/impressora.png";
 import Placa from "./assets/items/placa.png";
 import Ssd from "./assets/items/ssd.png";
+import { Cart } from "./src/screens/Cart";
 
 const services = [
   {
@@ -110,20 +111,8 @@ export default function App() {
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? "padding" : "height"}
       >
-        <FlatList
-          data={services}
-          keyExtractor={({ id }) => String(id)}
-          renderItem={({ item: { name, img, price, description } }) => {
-            return (
-              <Item
-                name={name}
-                img={img}
-                price={price}
-                description={description}
-              />
-            );
-          }}
-        />
+        {/* <Services services={services} /> */}
+        <Cart services={services} />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
