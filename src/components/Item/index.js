@@ -3,7 +3,6 @@ import { Image, Text, View, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { AmountInput } from "../AmountInput";
 import { Button } from "../Button";
-import { CartStatus } from "../CartStatus";
 
 export const Item = ({isCart, name, img, price, description }) => {
   const [amount, setAmount] = useState(1);

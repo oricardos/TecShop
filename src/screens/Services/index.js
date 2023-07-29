@@ -1,11 +1,14 @@
 import React from "react";
 import { FlatList } from "react-native";
 import { Item } from "../../components/Item";
+import { items } from "../../items";
+import { DefaultScreen } from "../../components/DefaultScreen";
 
-export const Services = ({ services }) => {
+export const Services = () => {
   return (
+   <DefaultScreen>
     <FlatList
-      data={services}
+      data={items}
       keyExtractor={({ id }) => String(id)}
       renderItem={({ item: { name, img, price, description } }) => {
         return (
@@ -13,5 +16,6 @@ export const Services = ({ services }) => {
         );
       }}
     />
+   </DefaultScreen>
   );
 };

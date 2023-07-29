@@ -1,14 +1,16 @@
 import React from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import { Item } from "../../components/Item";
 import { CartStatus } from "../../components/CartStatus";
+import { items } from "../../items";
+import { DefaultScreen } from "../../components/DefaultScreen";
 
-export const Cart = ({services}) => {
+export const Cart = () => {
   return (
-    <>
+    <DefaultScreen>
       <CartStatus />
       <FlatList
-      data={services}
+      data={items}
       keyExtractor={({ id }) => String(id)}
       renderItem={({ item: { name, img, price, description } }) => {
         return (
@@ -16,7 +18,7 @@ export const Cart = ({services}) => {
         );
       }}
     />
-    </>
+    </DefaultScreen>
     
   );
 };

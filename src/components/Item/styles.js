@@ -5,6 +5,7 @@ export default StyleSheet.create({
   wrapperItem: {
     padding: 24,
     gap: 8,
+    flex: 1
   },
   itemImg: {
     width: 70,
