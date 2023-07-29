@@ -8,6 +8,6 @@ export default StyleSheet.create({
   },
   adjustmentDown: {
     flex: 0,
-    backgroundColor: colors.primaryBlue,
+    backgroundColor: colors.red,
   },
 });

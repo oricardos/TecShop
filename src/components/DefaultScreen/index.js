@@ -21,7 +21,7 @@ export default function DefaultScreen({ children }) {
           {children}
         </KeyboardAvoidingView>
       </SafeAreaView>
-      <SafeAreaView style={styles.screenDown} />
+      <SafeAreaView style={styles.adjustmentDown} />
     </>
   );
 }
