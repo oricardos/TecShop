@@ -1,6 +1,9 @@
 import React from 'react'
 import Routes from './src/Routes'
+import DefaultScreen from './src/components/DefaultScreen'
 
 export default function App() {
-  return <Routes />
+  return <DefaultScreen>
+    <Routes />
+  </DefaultScreen>
 }

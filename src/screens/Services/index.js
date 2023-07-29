@@ -6,7 +6,7 @@ import { DefaultScreen } from "../../components/DefaultScreen";
 
 export const Services = () => {
   return (
-   <DefaultScreen>
+   <>
     <FlatList
       data={items}
       keyExtractor={({ id }) => String(id)}
@@ -16,6 +16,6 @@ export const Services = () => {
         );
       }}
     />
-   </DefaultScreen>
+   </>
   );
 };

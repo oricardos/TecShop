@@ -3,11 +3,10 @@ import { FlatList, View } from "react-native";
 import { Item } from "../../components/Item";
 import { CartStatus } from "../../components/CartStatus";
 import { items } from "../../items";
-import { DefaultScreen } from "../../components/DefaultScreen";
 
 export const Cart = () => {
   return (
-    <DefaultScreen>
+    <>
       <CartStatus />
       <FlatList
       data={items}
@@ -18,7 +17,7 @@ export const Cart = () => {
         );
       }}
     />
-    </DefaultScreen>
+    </>
     
   );
 };
